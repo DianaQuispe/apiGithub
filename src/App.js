@@ -90,6 +90,8 @@ const Popular = () => {
     </div>
   )
 }
+const lang = 'Ruby';
+
 const lang = 'JavaScript';
 fetchPopularRepos(lang).then( (repos) => {
    console.log ("repos:", repos);
@@ -101,16 +103,6 @@ fetchPopularRepos(lang).then( (repos) => {
   });
 });
 
-const lang = 'Ruby';
-fetchPopularRepos(lang).then( (repos) => {
-   console.log ("repos:", repos);
-  this.setState(
-    function () {
-    return {
-      repos: repos
-    }
-  });
-});
 battle([
    "ivanseidel", // https://github.com/ivanseidel
    "honcheng"]  // https://github.com/honcheng
