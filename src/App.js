@@ -23,6 +23,33 @@ const Home = () => {
     </div>
   )
 }
+
+battle([
+  "ivanseidel", // https://github.com/ivanseidel
+  "honcheng"]  // https://github.com/honcheng
+).then((results) => {
+  if (results === null){
+     console.log ('Looks like there was an error!\nCheck that both users exist on github.');
+  }
+  console.log ("battle result:", results[0], results[1]);
+});
+const bodyBattle = () => {
+  return (
+    <div className="row">
+      <div>
+        <h1 className="header">as</h1>
+        <h3>Score :</h3>
+        <div>
+          <div className="column">
+            <img className="avatar" src="" alt=""/>
+            <h2 className="usernames">as</h2>
+
+          </div>
+        </div>
+      </div> 
+    </div>
+  )
+}
 const Battle = () => {
   return(
     <div>
@@ -58,12 +85,65 @@ const RUBY = () => {
     
   )
 }
- const JAVASCRIPT = () => {
-  return (
-    <div> <h2> JAVASCRIPT </h2> </div>
+// const lang = 'JavaScript';
+// fetchPopularRepos(lang).then( (repos) => {
+//    console.log ("repos:", repos);
+//   this.setState(
+//     function () {
+//     return {
+//       repos: repos
+//     }
+//   });
+// });
+// const getList = content => {
+//   return content.map(item => (
+//     <JAVASCRIPT
+//     key ={item.id}
+//     id = {item.id}
+//     avatar = {item.owner.avatar_url}
+//     url= {item.svn_url}
+//     login= {item.owner.login}
+//     stars = {item.stargazers_count }
+
     
+//     />
+//   ))
+// }
+//  const javaSCRIPT = ({id, avatar, url, login, stars}) => {
+//   return (
+//     <div> 
+//       <ul className="popular-list">
+//         <li className="popular-item">
+//           <div className="popular-rank">
+
+//           </div>
+//           <ul className="space-list-items">
+//             <li>
+//               <img className="avatar" src={avatar} alt = ""/>
+//             </li>
+//             <li>
+//               <a href={url}></a>
+//             </li>
+//             <li>
+//               <label>"@"{login}</label>
+//             </li>
+//             <li>
+//               {stars}
+//             </li>
+//           </ul>
+//         </li>
+//       </ul>
+//     </div>
+    
+//   )
+// } 
+const JAVASCRIPT = () => {
+  return(
+    <div>
+      {/* {fetchPopularRepos("Javascript")} */}
+    </div>
   )
-} 
+}
 const Popular = () => {
   return(
     <div>
@@ -90,28 +170,8 @@ const Popular = () => {
     </div>
   )
 }
-const lang = 'Ruby';
 
-const lang = 'JavaScript';
-fetchPopularRepos(lang).then( (repos) => {
-   console.log ("repos:", repos);
-  this.setState(
-    function () {
-    return {
-      repos: repos
-    }
-  });
-});
 
-battle([
-   "ivanseidel", // https://github.com/ivanseidel
-   "honcheng"]  // https://github.com/honcheng
- ).then((results) => {
-   if (results === null){
-      console.log ('Looks like there was an error!\nCheck that both users exist on github.');
-   }
-   console.log ("battle result:", results[0], results[1]);
-});
 
 const App = () => (
   <BrowserRouter>
