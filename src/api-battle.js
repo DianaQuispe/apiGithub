@@ -49,7 +49,15 @@ function sortPlayers(players){
     return b.score - a.score;
   });
 }
-
+// battle([
+//     "ivanseidel", // https://github.com/ivanseidel
+//     "honcheng"]  // https://github.com/honcheng
+//   ).then((results) => {
+//     if (results === null){
+//        console.log ('Looks like there was an error!\nCheck that both users exist on github.');
+//     }
+//     console.log ("battle result:", results[0], results[1]);
+//   });
 
 export function battle(players){
    return axios.all(players.map(getUserData))

@@ -23,18 +23,34 @@ const Home = () => {
     </div>
   )
 }
-
-battle([
-  "ivanseidel", // https://github.com/ivanseidel
-  "honcheng"]  // https://github.com/honcheng
-).then((results) => {
-  if (results === null){
-     console.log ('Looks like there was an error!\nCheck that both users exist on github.');
+class Body extends Component {
+  constructor() {
+    super()
+    this.playerOne = null;
+    this.playerTwo  = 'honcheng';
   }
-  console.log ("battle result:", results[0], results[1]);
-});
-const bodyBattle = () => {
-  return (
+
+  render() {
+    const Battle = () => {
+      return(
+        <div>
+          <div className="row">
+            <form className="column">
+              <label className="header" for="username">Player One</label>
+              <input onChange = {(e) =>e.target.value  } value=''  type="text" id="username" placeholder="github username"/>
+              <Button>Submit</Button>
+            </form>
+            <form className="column">
+              <label className="header" for="username">Player Two</label>
+              <input type="text" id="username" placeholder="github username"/>
+              <Button>Submit</Button>
+            </form>
+          </div>
+        </div>
+      )
+    }
+    
+    return(
     <div className="row">
       <div>
         <h1 className="header">as</h1>
@@ -48,8 +64,18 @@ const bodyBattle = () => {
         </div>
       </div> 
     </div>
-  )
+    )
+  }
 }
+
+battle(["ivanseidel","honcheng"]).then((results) => {
+  if (results === null){
+     console.log ('Looks like there was an error!\nCheck that both users exist on github.');
+  }
+  console.log ("battle result:", results[0], results[1]);
+});
+
+
 const Battle = () => {
   return(
     <div>
@@ -60,7 +86,7 @@ const Battle = () => {
           <Button>Submit</Button>
         </form>
         <form className="column">
-          <label className="header" for="username">Player One</label>
+          <label className="header" for="username">Player Two</label>
           <input type="text" id="username" placeholder="github username"/>
           <Button>Submit</Button>
         </form>
@@ -68,6 +94,25 @@ const Battle = () => {
     </div>
   )
 }
+// const bodyBattle = () => {
+//   return (
+  
+//     <div className="row">
+//       <div>
+//         <h1 className="header">as</h1>
+//         <h3>Score :</h3>
+//         <div>
+//           <div className="column">
+//             <img className="avatar" src="" alt=""/>
+//             <h2 className="usernames">as</h2>
+
+//           </div>
+//         </div>
+//       </div> 
+//     </div>
+//   )
+// }
+
 const NotFoundPage = (props) => {
   return (
      <div> <h2> Error 404! </h2> </div>
